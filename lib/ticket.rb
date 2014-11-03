@@ -1,17 +1,8 @@
 class Ticket
-  attr_accessor :sub_parking_lot_id, :carport_id
+  attr_accessor :parking_lot_id, :car_id
 
-  def initialize(sub_parking_lot_id, carport_id)
-    @sub_parking_lot_id = sub_parking_lot_id
-    @carport_id = carport_id
-  end
-
-  def id
-    "#{@sub_parking_lot_id}/#{@carport_id}"
-  end
-
-  def self.find(id)
-    ids = id.split('/')
-    Ticket.new(ids.first.to_i, ids.last.to_i)
+  def initialize(parking_lot_id, car_id)
+    @parking_lot_id = parking_lot_id
+    @car_id = car_id
   end
 end
